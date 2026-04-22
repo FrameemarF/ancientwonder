@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Колосс Родосский — 7 чудес света</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Специфичные стили для страницы чуда */
+        body {
+            font-family: Georgia, serif;
+            background-color: #faf6f3;
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.3),
+                rgba(0, 0, 0, 0.3)
+            ), url('images/colossus_background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #3d2f2a;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .wonder-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+
+        .wonder-hero {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .wonder-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+        }
+
+        .wonder-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.3) 0%,
+                rgba(0,0,0,0.5) 50%,
+                rgba(0,0,0,0.7) 100%
+            );
+        }
+
+        .wonder-hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .wonder-hero-number {
+            font-size: 5em;
+            font-weight: bold;
+            color: rgba(244, 208, 63, 0.9);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .wonder-hero-title {
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .wonder-hero-meta {
+            font-style: italic;
+            color: #e0d0c0;
+            font-size: 1.1em;
+        }
+
+        .wonder-content {
+            padding: 40px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #c15a3a;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: gap 0.3s ease;
+        }
+
+        .back-button:hover {
+            gap: 12px;
+        }
+
+        .wonder-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #3d2f2a;
+            margin-bottom: 30px;
+        }
+
+        .wonder-text p {
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fff9f5 0%, #fff0e6 100%);
+            border-left: 4px solid #c15a3a;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .info-box h3 {
+            color: #c15a3a;
+            font-size: 1.4em;
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(193, 90, 58, 0.2);
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-box li {
+            padding: 8px 0;
+            color: #5a4a42;
+            font-size: 1em;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .info-box li:last-child {
+            border-bottom: none;
+        }
+
+        .info-box strong {
+            color: #3d2f2a;
+            display: inline-block;
+            min-width: 180px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #6b5d4f;
+            border-left: 3px solid #d4734f;
+            padding-left: 20px;
+            margin: 30px 0;
+            font-size: 1.15em;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .wonder-hero {
+                height: 350px;
+            }
+            .wonder-hero-number {
+                font-size: 3.5em;
+            }
+            .wonder-hero-title {
+                font-size: 1.8em;
+            }
+            .wonder-content {
+                padding: 25px;
+            }
+            .wonder-hero-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wonder-detail">
+        <!-- Hero секция с изображением -->
+        <div class="wonder-hero">
+            <img src="images/colossus.jpg" alt="Колосс Родосский" class="wonder-hero-image">
+            <div class="wonder-hero-overlay"></div>
+            <div class="wonder-hero-content">
+                <div class="wonder-hero-number">VI</div>
+                <h1 class="wonder-hero-title">Колосс Родосский</h1>
+                <p class="wonder-hero-meta">Родос, Греция · ок. 292–280 гг. до н.э.</p>
+            </div>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="wonder-content">
+            <a href="index.html" class="back-button">
+                ← Назад к списку чудес
+            </a>
+
+            <div class="wonder-text">
+                <p>
+                    Колосс Родосский — гигантская статуя бога солнца Гелиоса, установленная 
+                    на острове Родос в честь победы над войсками Деметрия I Полиоркета. 
+                    Скульптором был Харет из Линда, ученик знаменитого Лисиппа.
+                </p>
+                <p>
+                    Высота статуи составляла около 36 метров. Вопреки популярному мифу, 
+                    Колосс не стоял, расставив ноги над входом в гавань — корабли проходили 
+                    мимо него. Он располагался на массивном каменном постаменте у берега 
+                    и служил маяком и символом свободы Родоса.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3>📋 Краткие факты</h3>
+                <ul>
+                    <li><strong>Дата создания:</strong> 292–280 гг. до н.э.</li>
+                    <li><strong>Скульптор:</strong> Харет из Линда</li>
+                    <li><strong>Высота:</strong> ~36 м</li>
+                    <li><strong>Материал:</strong> бронзовые листы, железный каркас, камень</li>
+                    <li><strong>Время строительства:</strong> ~12 лет</li>
+                    <li><strong>Статус:</strong> разрушен землетрясением (ок. 226 г. до н.э.)</li>
+                </ul>
+            </div>
+
+            <div class="quote">
+                «Не только на море, но и на суше мы воздвигли этот несокрушимый Колосс, 
+                дарующий свет и свободу»<br>
+                <small>— Надпись на постаменте статуи</small>
+            </div>
+
+            <div class="wonder-text">
+                <p>
+                    Колосс простоял всего 56 лет. Землетрясение 226 года до н.э. переломило 
+                    его у коленей. Птолемей III предлагал средства на восстановление, но 
+                    дельфийский оракул запретил это делать, посчитав разрушение знаком воли богов.
+                </p>
+                <p>
+                    Обломки пролежали на земле почти 900 лет, привлекая путешественников. 
+                    В 654 году нашей эры арабы продали остатки статуи на металлолом: 
+                    по преданию, для вывоза потребовалось 900 верблюдов. До наших дней 
+                    не сохранилось ни одного фрагмента.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin: 40px 0; color: #999; font-size: 0.9em;">
+        <p>&copy; 2025 — 7 чудес света Старого Света</p>
+    </footer>
+
+</body>
+</html>
