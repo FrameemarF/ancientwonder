@@ -1,0 +1,185 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #faf6f3;
+    /* Фоновое изображение задаётся через переменную --wonder-bg */
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+    ), var(--wonder-bg, url('images/default_background.jpg'));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #3d2f2a;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.wonder-detail {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+.wonder-hero {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.wonder-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85);
+}
+
+.wonder-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.5) 50%,
+        rgba(0,0,0,0.7) 100%
+    );
+}
+
+.wonder-hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    color: #fff;
+    z-index: 2;
+}
+
+.wonder-hero-number {
+    font-size: 5em;
+    font-weight: bold;
+    color: rgba(244, 208, 63, 0.9);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.wonder-hero-title {
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.wonder-hero-meta {
+    font-style: italic;
+    color: #e0d0c0;
+    font-size: 1.1em;
+}
+
+.wonder-content {
+    padding: 40px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #c15a3a;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 30px;
+    transition: gap 0.3s ease;
+}
+
+.back-button:hover {
+    gap: 12px;
+}
+
+.back-arrow {
+    transition: transform 0.2s ease;
+}
+
+.back-button:hover .back-arrow {
+    transform: translateX(-3px);
+}
+
+.wonder-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #3d2f2a;
+    margin-bottom: 30px;
+}
+
+.wonder-text p {
+    margin-bottom: 20px;
+}
+
+.info-box {
+    background: linear-gradient(135deg, #fff9f5 0%, #fff0e6 100%);
+    border-left: 4px solid #c15a3a;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin: 30px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.info-box h3 {
+    color: #c15a3a;
+    font-size: 1.4em;
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(193, 90, 58, 0.2);
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-box li {
+    padding: 8px 0;
+    color: #5a4a42;
+    font-size: 1em;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.info-box li:last-child {
+    border-bottom: none;
+}
+
+.info-box strong {
+    color: #3d2f2a;
+    display: inline-block;
+    min-width: 180px;
+}
+
+.quote {
+    font-style: italic;
+    color: #6b5d4f;
+    border-left: 3px solid #d4734f;
+    padding-left: 20px;
+    margin: 30px 0;
+    font-size: 1.15em;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .wonder-hero { height: 350px; }
+    .wonder-hero-number { font-size: 3.5em; }
+    .wonder-hero-title { font-size: 1.8em; }
+    .wonder-content { padding: 25px; }
+    .wonder-hero-content { padding: 25px; }
+}
